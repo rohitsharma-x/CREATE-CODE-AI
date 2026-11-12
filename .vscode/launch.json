@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🌐 Open CreateCode App (http://localhost:5173)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/client"
+    },
+    {
+      "name": "🖥️ Debug Backend API Server (Port 5000)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server/src/server.js",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "PORT": "5000",
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "⚡ Full Stack Runner (dev.js)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dev.js",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "🚀 Launch Full Stack + Chrome",
+      "configurations": [
+        "🖥️ Debug Backend API Server (Port 5000)",
+        "🌐 Open CreateCode App (http://localhost:5173)"
+      ]
+    }
+  ]
+}

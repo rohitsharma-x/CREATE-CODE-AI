@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Full-Stack App (dev.js)",
+      "type": "shell",
+      "command": "node dev.js",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting CreateCode AI",
+          "endsPattern": "ready in"
+        }
+      }
+    },
+    {
+      "label": "Start Backend (server)",
+      "type": "shell",
+      "command": "node server/src/server.js",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "CreateCode AI Backend running",
+          "endsPattern": "Client URL"
+        }
+      }
+    },
+    {
+      "label": "Start Frontend (client)",
+      "type": "shell",
+      "command": "npm run dev --prefix client",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "Local:"
+        }
+      }
+    }
+  ]
+}
+
